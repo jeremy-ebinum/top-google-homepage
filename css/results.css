@@ -1,11 +1,186 @@
 /* Global Styling */
 :root {
   --primary-color: hsl(217, 89%, 46%);
-  --light-color: hsl(0, 0%, 67%);
+  --light-color: #ebebeb;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.page-wrapper {
+  display: grid;
+  grid-template-areas:
+  "header header header"
+  ". results knowledge"
+  "footer footer footer"
+;
+  grid-template-columns: 130px 625px 350px;
+  grid-gap: 0 1rem;
+}
+
+.header {
+  display: grid;
+  grid-template-areas:
+    "collapse-nav collapse-nav collapse-nav"
+    ". filter-nav ."
+  ;
+  grid-template-columns: 130px 625px 350px;
+  grid-gap: 0 1rem;
+  border-bottom: 1px solid var(--light-color);
+  grid-area: header;
+}
+
+.header .collapse-nav {
+  display: grid;
+  grid-template-areas: "logo search account";
+  grid-template-columns: 130px 625px 350px;
+  grid-gap: 0 0.5rem;
+  align-items: center;
+  margin-top: 1.25rem;
+  /* border: 1px solid red; */
+  grid-area: collapse-nav;
+}
+
+/* Collapsible Nav Styling */
+
+/* logo */
+.collapse-nav .google-logo-sm {
+  /* border: 1px solid red; */
+  margin-left: 1rem;
+  grid-area: logo;
+}
+
+.collapse-nav .google-logo-sm img {
+  display: block;
+  width: 92px;
+  height: 30px;
+}
+
+/* search */
+.collapse-nav .google-search-input {
+  /* border: 1px solid red; */
+  position: relative;
+  width: 100%;
+  grid-area: search;
+}
+
+.collapse-nav .google-search-input input {
+  width: 100%;
+  border: 1px solid hsl(0, 0%, 67%);
+  border-radius: 75px;
+  padding: 0.75rem 2.5rem;
+  font-size: 16px;
+  outline: none;
+}
+
+.collapse-nav .google-search-input input:hover {
+  box-shadow: 0 0 4px 0 hsl(0, 0%, 67%);
+}
+
+.collapse-nav .google-search-input .search-icon {
+  position: absolute;
+  top: 0.25rem;
+  right: 0;
+  padding: 0.75rem 1rem;
+  color: hsl(0, 0%, 67%);
+  font-size: 1rem;
+}
+
+/* account */
+.collapse-nav .google-account {
+  /* border: 1px solid red; */
+  margin-right: 1rem;
+  grid-area: account;
+}
+
+.google-account ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}
+
+.google-account ul li {
+  margin-right: 1rem;
+}
+
+.google-account ul li:last-child {
+  margin-right: 0;
+}
+
+.google-account ul li:last-child a {
+  padding: 0.45rem 0.6rem;
+  border-radius: 50%;
+  background-color: #00897b;
+  color: #fff;
+  text-decoration: none;
+}
+
+.header .filter-nav {
+  display: flex;
+  width: 100%;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  /* border: solid 1px red; */
+  grid-area: filter-nav;
+}
+
+.header .filter-nav ul {
+  display: flex;
+}
+
+.header .filter-nav ul:last-child {
+  margin-left: auto;
+}
+
+.header .filter-nav ul li {
+  padding: 0.75rem 0;
+}
+
+.header .filter-nav ul li a {
+  font-size: 13px;
+  font-weight: 300;
+  opacity: 0.75;
+  padding: 0.75rem;
+}
+
+.header .filter-nav ul li a.active {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.header .filter-nav ul li a.tools {
+  border-radius: 5px;
+  padding: 0.35rem 0.75rem;
+  box-shadow: 0 0 1px 0 hsl(0, 0%, 67%) inset;
+  border: 1px solid transparent;
+}
+
+.header .filter-nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+.header .filter-nav ul li a.active:hover {
+  color: inherit;
+}
+
+.header .filter-nav ul li a.tools:hover {
+  background-color: rgb(235, 235, 235);
+  border: 1px solid hsl(0, 0%, 67%);
+  color: inherit;
 }
