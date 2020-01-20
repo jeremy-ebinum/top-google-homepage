@@ -1,7 +1,8 @@
 /* Global Styling */
 :root {
   --primary-color: hsl(217, 89%, 46%);
-  --light-color: #ebebeb;
+  --light-color: #f2f2f2;
+  --footer-text-color: hsl(0, 0%, 55%);
 }
 
 * {
@@ -32,7 +33,7 @@ a {
   "footer footer footer"
 ;
   grid-template-columns: 130px 625px 350px;
-  grid-gap: 0 1rem;
+  grid-gap: 0 0.5rem;
 }
 
 .header {
@@ -42,7 +43,7 @@ a {
     ". filter-nav ."
   ;
   grid-template-columns: 130px 625px 350px;
-  grid-gap: 0 1rem;
+  grid-gap: 0 0.5rem;
   border-bottom: 1px solid var(--light-color);
   grid-area: header;
 }
@@ -183,4 +184,62 @@ a {
   background-color: rgb(235, 235, 235);
   border: 1px solid hsl(0, 0%, 67%);
   color: inherit;
+}
+
+.footer {
+  display: grid;
+  grid-template-areas:
+    ". location location"
+    "divider divider divider"
+    ". footer-nav footer-nav"
+  ;
+  grid-template-columns: 130px 625px 350px;
+  grid-gap: 0 0.5rem;
+  grid-area: footer;
+  font-size: 14px;
+  color: var(--footer-text-color);
+  background: var(--light-color);
+}
+
+.footer .footer-location {
+  padding: 1rem 0;
+  grid-area: location;
+}
+
+.footer .footer-location > span:nth-child(2) {
+  padding: 0.5rem 0;
+  border-right: 1px solid #ccc;
+  margin: 0 0.75rem;
+}
+
+.footer .footer-location span:last-child .bold {
+  font-weight: bold;
+  color: hsl(0, 0%, 15%);
+}
+
+.footer  a {
+  color: var(--footer-text-color);
+}
+
+.footer a:hover {
+  color: hsl(0, 0%, 15%);
+}
+
+
+.footer .divider {
+  border-bottom: 1px groove #ccc;
+  grid-area: divider;
+}
+
+.footer .footer-nav {
+  grid-area: footer-nav;
+}
+
+.footer .footer-nav ul {
+  display: flex;
+}
+
+.footer .footer-nav ul li {
+  padding: 0.75rem 0;
+  margin-right: 1rem;
 }
