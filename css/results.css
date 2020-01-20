@@ -1,0 +1,11 @@
+/* Global Styling */
+:root {
+  --primary-color: hsl(217, 89%, 46%);
+  --light-color: hsl(0, 0%, 67%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
