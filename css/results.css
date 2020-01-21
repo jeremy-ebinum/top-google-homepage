@@ -5,6 +5,8 @@
   --light-text-color: hsl(0, 0%, 55%);
   --search-glow-color-1: hsl(0, 0%, 95%);
   --search-glow-color-2: hsl(0, 0%, 90%);
+  --pill-element-outline-color: hsl(0, 0%, 80%);
+  --divider-color: #ccc;
 }
 
 /* Resets */
@@ -17,21 +19,37 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
+  word-wrap: break-word;
 }
 
 ul {
   list-style-type: none;
 }
 
+.twitter-color {
+  color: #2caae1;
+}
+
+.youtube-color {
+  color: #e5291b;
+}
+
+.linkedin-color {
+  color: #007bb6;
+}
+
 /* Page Wrapper */
 .page-wrapper {
   display: grid;
+  /* includes optional addons to the page */
   grid-template-areas:
     "header header header"
     ". filter-results filter-results"
+    "addon-1 addon-1 addon-1"
     ". results knowledge"
+    "addon-2 addon-2 addon-2"
     "footer footer footer";
-  grid-template-columns: 130px 625px 350px;
+  grid-template-columns: 150px 625px 1fr;
   grid-gap: 0 0.5rem;
 }
 
@@ -41,7 +59,7 @@ ul {
   grid-template-areas:
     "collapse-nav collapse-nav collapse-nav"
     ". filter-nav .";
-  grid-template-columns: 130px 625px 350px;
+  grid-template-columns: 150px 625px 1fr;
   grid-gap: 0 0.5rem;
   border-bottom: 1px solid var(--light-color);
   grid-area: header;
@@ -56,7 +74,7 @@ ul {
 .header .collapse-nav {
   display: grid;
   grid-template-areas: "logo search account";
-  grid-template-columns: 130px 625px 350px;
+  grid-template-columns: 150px 625px 1fr;
   grid-gap: 0 0.5rem;
   align-items: center;
   margin-top: 1.25rem;
@@ -89,7 +107,7 @@ ul {
 
 .collapse-nav .google-search-input input {
   width: 100%;
-  border: 1px solid hsl(0, 0%, 67%);
+  border: 1px solid var(--pill-element-outline-color);
   border-radius: 75px;
   padding: 0.75rem 2.5rem;
   font-size: 16px;
@@ -210,6 +228,7 @@ ul {
   margin-bottom: 2rem;
   grid-area: results;
   font-size: 14px;
+  margin-right: 1.5rem;
 }
 
 .results p {
@@ -311,6 +330,194 @@ ul {
   bottom: 8px;
 }
 
+/* Knowledge Panel */
+.knowledge {
+  /* border: 1px solid red; */
+  display: flex;
+  /* justify-content: stretch; */
+  flex-direction: column;
+  grid-area: knowledge;
+  margin-left: 1.5rem;
+  /* overflow-x: hidden; */
+  max-width: 370px;
+}
+
+.knowledge a {
+  text-decoration: none;
+}
+
+.knowledge-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--pill-element-outline-color);
+  margin-bottom: 0.25rem;
+  border-radius: 7px;
+  /* overflow: hidden; */
+  /* margin-right: -1px; */
+}
+
+.knowledge .knowledge-card a:hover {
+  text-decoration: underline;
+}
+
+.knowledge-card-head,
+.knowledge-card-info,
+.knowledge-card-profiles,
+.knowledge-card-related {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.knowledge-card .knowledge-card-head {
+  display: flex;
+  padding: 2rem 0;
+}
+
+.knowledge-card-head .knowledge-card-head-title span:first-child {
+  font-size: 1.3rem;
+  line-height: 30px;
+  flex: 0 0 50%;
+}
+
+.knowledge-card-head .knowledge-card-head-title span:last-child {
+  font-size: 1rem;
+  color: var(--light-text-color);
+}
+
+.knowledge-card-head .knowledge-card-head-share {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  flex: 0 0 20%;
+}
+
+.knowledge-card-head .knowledge-card-head-share a {
+  color: var(--light-text-color);
+  position: relative;
+  top: 10%;
+}
+
+.knowledge-card-head .knowledge-card-head-icon {
+  flex: 0 0 30%;
+}
+
+.knowledge-card-head .knowledge-card-head-icon img {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+.knowledge-card .knowledge-card-url {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--divider-color);
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.knowledge-card .knowledge-card-url a {
+  margin: 0 1rem;
+}
+
+.knowledge-card .knowledge-card-url a i {
+  margin-right: 1rem;
+  color: #000;
+}
+
+.knowledge-card .knowledge-card-info {
+  margin-top: 0.5rem;
+}
+
+.knowledge-card .knowledge-card-info p {
+  font-size: 14px;
+}
+
+.knowledge-card .knowledge-card-info p a {
+  font-weight: bold;
+  line-height: 2;
+}
+
+.knowledge-card .knowledge-card-profiles {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.knowledge-card .knowledge-card-profiles .profiles-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+}
+
+.knowledge-card .knowledge-card-profiles .profiles-icons img {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+.knowledge-card .knowledge-card-profiles .profiles-icons p {
+  font-size: 14px;
+}
+
+.knowledge-card .knowledge-card-related {
+  padding: 1rem 0;
+}
+
+.knowledge-card-related .knowledge-card-related-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding: 1rem 0;
+}
+
+.knowledge-card-related .knowledge-card-related-head p:first-child {
+  flex: 0 0 60%;
+}
+
+.knowledge-card-related .knowledge-card-related-head p:last-child a {
+  font-size: 0.85rem;
+  color: var(--light-text-color);
+}
+
+.knowledge-card-related .knowledge-card-related-searches {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.knowledge-actions .knowledge-actions-container {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.knowledge-actions .knowledge-actions-container a {
+  font-size: 12px;
+  color: var(--light-text-color);
+  margin: 0 1rem;
+}
+
+.knowledge-actions .knowledge-actions-container a:hover {
+  text-decoration: underline;
+}
+
+.knowledge-actions .knowledge-claim-btn {
+  padding: 0.6rem;
+  border: 1px solid var(--pill-element-outline-color);
+  border-radius: 25px;
+  font-size: 14px;
+  color: #000;
+}
+
+.knowledge-actions .knowledge-claim-btn:hover {
+  background-color: hsl(0, 0%, 97%);
+}
+
+.knowledge-actions .knowledge-claim-btn i {
+  color: var(--primary-color);
+}
+
 /* Footer */
 .footer {
   display: grid;
@@ -318,7 +525,7 @@ ul {
     ". location location"
     "divider divider divider"
     ". footer-nav footer-nav";
-  grid-template-columns: 130px 625px 350px;
+  grid-template-columns: 150px 625px 1fr;
   grid-gap: 0 0.5rem;
   grid-area: footer;
   font-size: 14px;
@@ -355,7 +562,7 @@ ul {
 }
 
 .footer .divider {
-  border-bottom: 1px groove #ccc;
+  border-bottom: 1px groove var(--divider-color);
   grid-area: divider;
 }
 
