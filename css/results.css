@@ -80,13 +80,13 @@ a:link {
 .header .collapse-nav {
   position: absolute;
   top: 20px;
-  width: 100%;
+  width: 100vw;
   display: grid;
   grid-template-areas: "logo search account";
   grid-template-columns: 150px 625px 1fr;
   grid-gap: 0 0.5rem;
   align-items: center;
-  grid-area: collapse-nav;
+  /* grid-area: collapse-nav; */
   background-color: #fff;
 }
 
@@ -111,6 +111,10 @@ a:link {
 
 .collapse-nav.collapsed .google-search-input .search-icon {
   font-size: 14px;
+}
+
+.collapse-nav.collapsed .google-account {
+  min-width: 0px;
 }
 /* END Collapsed Nav Styling */
 
@@ -161,6 +165,8 @@ a:link {
 
 /* account - grid */
 .collapse-nav .google-account {
+  min-width: 300px;
+  max-width: 370px;
   margin-right: 1rem;
   grid-area: account;
 }
@@ -168,11 +174,11 @@ a:link {
 .collapse-nav .google-account ul {
   display: flex;
   justify-content: flex-end;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .collapse-nav .google-account ul li {
-  margin-right: 1.5rem;
+  margin-right: 1rem;
 }
 
 .collapse-nav .google-account ul li:last-child {
@@ -371,6 +377,7 @@ a:link {
   flex-direction: column;
   grid-area: knowledge;
   margin-left: 1.5rem;
+  min-width: 300px;
   max-width: 370px;
 }
 
