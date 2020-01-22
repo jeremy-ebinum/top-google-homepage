@@ -49,7 +49,7 @@ a:link {
   /* includes optional addons to the page */
   grid-template-areas:
     "header header header"
-    ". filter-results filter-results"
+    ". filter-results ."
     "addon-1 addon-1 addon-1"
     ". results knowledge"
     "addon-2 addon-2 addon-2"
@@ -251,10 +251,44 @@ a:link {
 
 /* START Filter Results Styles */
 .filter-results {
+  height: 40px;
   grid-area: filter-results;
-  font-size: 14px;
   color: var(--light-text-color);
   padding: 0.75rem 0;
+  overflow: hidden;
+}
+
+.filter-results span#filters-meta {
+  font-size: 14px;
+  position: relative;
+  top: -2px;
+}
+
+span#filters-options {
+  display: block;
+  font-size: 13px;
+  position: relative;
+  top: -53px;
+}
+
+.filter-results span#filters-options > span {
+  margin-right: 1rem;
+}
+
+.filter-results span#filters-options a,
+.filter-results span#filters-options a > span {
+  color: #333;
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+span#filters-options a:hover {
+  color: var(--primary-color);
+}
+
+span#filters-options a:hover > span {
+  color: #000;
+  opacity: 1;
 }
 /* END Filter Result Styles */
 

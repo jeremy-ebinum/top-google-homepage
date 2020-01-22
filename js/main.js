@@ -2,9 +2,13 @@ const collapseNav = document.querySelector(".collapse-nav");
 const filterNav = document.querySelector(".filter-nav");
 const filterNavBottom =
   filterNav.getBoundingClientRect().bottom + window.pageYOffset;
+const toolsBtn = $("#tools");
+const filtersMeta = $("#filters-meta");
+const filtersOptions = $("#filters-options");
+
 let navIsCollapsed = false;
 
-// Collapse Nav Functionality
+// Let the search nav collapse after scrolling past the filter-nav links/btns
 window.addEventListener("scroll", function() {
   if (window.scrollY > filterNavBottom) {
     collapseNav.classList.add("collapsed");
@@ -44,5 +48,20 @@ window.addEventListener("scroll", function() {
     setTimeout(() => {
       collapseNav.classList.remove("collapsed");
     }, 50);
+  }
+});
+
+// Let Tools Button Toggle filter-results content;
+let isToggled = false;
+
+toolsBtn.click(function() {
+  if (!isToggled) {
+    filtersMeta.animate({ top: 20, opacity: 0 }, 150);
+    filtersOptions.animate({ top: -20 }, 200);
+    isToggled = true;
+  } else {
+    filtersMeta.animate({ top: -2, opacity: 1 }, 200);
+    filtersOptions.animate({ top: -53 }, 150);
+    isToggled = false;
   }
 });

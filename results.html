@@ -1,474 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Font Awesome Css -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- Project Css -->
+    <link rel="stylesheet" href="./css/results.css" />
+    <title>Google Results Prototype</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <!-- Font Awesome Css -->
-  <link rel="stylesheet" href="./css/all.min.css">
-  <!-- Project Css -->
-  <link rel="stylesheet" href="./css/results.css" />
-  <title>Google Results Prototype</title>
-</head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Header -->
+      <header class="header">
+        <nav class="collapse-nav">
+          <div class="google-logo-sm">
+            <img src="./img/googlelogo_color_92x30dp.png" alt="Google logo" />
+          </div>
+          <div class="google-search-input">
+            <input type="text" />
+            <i class="search-icon fas fa-search"></i>
+          </div>
+          <div class="google-account">
+            <ul>
+              <li>
+                <a class="apps-icon" href="#apps"
+                  ><i class="fas fa-th fa-lg"></i
+                ></a>
+              </li>
+              <li><a href="#account">N</a></li>
+            </ul>
+          </div>
+        </nav>
 
-<body>
-  <div class="page-wrapper">
-    <!-- Header -->
-    <header class="header">
-      <nav class="collapse-nav">
-        <div class="google-logo-sm">
-          <img src="./img/googlelogo_color_92x30dp.png" alt="Google logo" />
-        </div>
-        <div class="google-search-input">
-          <input type="text" />
-          <i class="search-icon fas fa-search"></i>
-        </div>
-        <div class="google-account">
+        <nav class="filter-nav">
           <ul>
             <li>
-              <a class="apps-icon" href="#apps"><i
-                  class="fas fa-th fa-lg"></i></a>
+              <a class="active" href="#all"
+                ><i class="fas fa-search"></i> All</a
+              >
             </li>
-            <li><a href="#account">N</a></li>
+            <li>
+              <a href="#news"><i class="far fa-newspaper"></i> News</a>
+            </li>
+            <li>
+              <a href="#images"><i class="fas fa-image"></i> Images</a>
+            </li>
+            <li>
+              <a href="#videos"><i class="fas fa-video"></i> Videos</a>
+            </li>
+            <li>
+              <a href="#books"><i class="fas fa-book"></i> Books</a>
+            </li>
+
+            <li>
+              <a href="#more"><i class="fas fa-ellipsis-v"></i> More</a>
+            </li>
           </ul>
-        </div>
-      </nav>
 
-      <nav class="filter-nav">
-        <ul>
-          <li>
-            <a class="active" href="#all"><i class="fas fa-search"></i> All</a>
-          </li>
-          <li>
-            <a href="#news"><i class="far fa-newspaper"></i> News</a>
-          </li>
-          <li>
-            <a href="#images"><i class="fas fa-image"></i> Images</a>
-          </li>
-          <li>
-            <a href="#videos"><i class="fas fa-video"></i> Videos</a>
-          </li>
-          <li>
-            <a href="#books"><i class="fas fa-book"></i> Books</a>
-          </li>
+          <ul>
+            <li><a href="#settings">Settings</a></li>
+            <li><a id="tools" class="tools" href="#">Tools</a></li>
+          </ul>
+        </nav>
+      </header>
 
-          <li>
-            <a href="#more"><i class="fas fa-ellipsis-v"></i> More</a>
-          </li>
-        </ul>
+      <!-- Filter Results: (Time taken for search or target for Tools button) -->
+      <div class="filter-results">
+        <span id="filters-meta"
+          >About 16,000,000 results (0.43 seconds)</span
+        >
+        <span id="filters-options">
+          <span><a href="#">Any time <span>&#9207</span></a></span>
+          <span><a href="#">All results <span>&#9207</span></a></span>
+        </span>
+      </div>
 
-        <ul>
-          <li><a href="#settings">Settings</a></li>
-          <li><a class="tools" href="#tools">Tools</a></li>
-        </ul>
-      </nav>
-    </header>
+      <!-- Results -->
+      <section class="results">
+        <!-- Primary Result -->
+        <div class="result">
+          <div class="result-header">
+            <a href="#result-link" class="result-link">
+              <div class="cached-result">
+                <img
+                  src="./img/icons8-link-64.png"
+                  alt=""
+                  class="cached-result-icon"
+                />
+                <span>www.theodinproject.com &#9207; </span>
+              </div>
+              <h3 class="results-heading">
+                The Odin Project: Your Career in Web Development Starts Here
+              </h3>
+            </a>
+          </div>
+          <p class="description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur, atque. Saepe eaque ullam esse sapiente.
+          </p>
 
-    <!-- Filter Results: (Time taken for search or target for Tools button) -->
-    <div class="filter-results">
-      <span>About 16,000,000 results (0.43 seconds)</span>
-    </div>
-
-    <!-- Results -->
-    <section class="results">
-      <!-- Primary Result -->
-      <div class="result">
-        <div class="result-header">
-          <a href="#result-link" class="result-link">
-            <div class="cached-result">
-              <img src="./img/icons8-link-64.png" alt=""
-                class="cached-result-icon" />
-              <span>www.theodinproject.com &#9207; </span>
+          <div class="result-container">
+            <div class="sub-result">
+              <a href="#result-link">
+                <h3 class="results-heading">Lorem, ipsum.</h3>
+              </a>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                doloribus earum sint?
+              </p>
             </div>
-            <h3 class="results-heading">
-              The Odin Project: Your Career in Web Development Starts Here
-            </h3>
-          </a>
-        </div>
-        <p class="description">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Consectetur, atque. Saepe eaque ullam esse sapiente.
-        </p>
-
-        <div class="result-container">
-          <div class="sub-result">
-            <a href="#result-link">
-              <h3 class="results-heading">Lorem, ipsum.</h3>
-            </a>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-              doloribus earum sint?
-            </p>
-          </div>
-          <div class="sub-result">
-            <a href="#sub-result-link">
-              <h3 class="results-heading">Lorem, ipsum.</h3>
-            </a>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-              doloremque fugit ea nemo!
-            </p>
-          </div>
-          <div class="sub-result">
-            <a href="#sub-result-link">
-              <h3 class="results-heading">Lorem, ipsum.</h3>
-            </a>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex.
-            </p>
-          </div>
-          <div class="sub-result">
-            <a href="#sub-result-link">
-              <h3 class="results-heading">Lorem, ipsum.</h3>
-            </a>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Aliquam, voluptates.
-            </p>
-          </div>
-          <div class="sub-result">
-            <a href="#sub-result-link">
-              <h3 class="results-heading">Lorem, ipsum.</h3>
-            </a>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel,
-              odio.
-            </p>
-          </div>
-          <div class="sub-result">
-            <a href="#sub-result-link">
-              <h3 class="results-heading">Lorem, ipsum.</h3>
-            </a>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea
-              architecto doloribus quo cumque saepe.
-            </p>
-          </div>
-          <div class="more">
-            <a href="#more-results">More results from Lorem, ipsum dolor.
-              &#187;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Secondary Result -->
-      <div class="result">
-        <div class="result-header">
-          <a href="#result-link" class="result-link">
-            <div class="cached-result">
-              <img src="./img/icons8-link-64.png" alt=""
-                class="cached-result-icon" />
-              <span>www.site.com &#9207; </span>
+            <div class="sub-result">
+              <a href="#sub-result-link">
+                <h3 class="results-heading">Lorem, ipsum.</h3>
+              </a>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Delectus doloremque fugit ea nemo!
+              </p>
             </div>
-            <h3 class="results-heading">
-              Lorem ipsum dolor sit amet.
-            </h3>
-          </a>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-          ut mollitia nostrum quam illo cupiditate amet voluptatibus veniam
-          tenetur soluta sequi fugiat id illum delectus.
-        </p>
-      </div>
-
-      <!-- Secondary Result -->
-      <div class="result">
-        <div class="result-header">
-          <a href="#result-link" class="result-link">
-            <div class="cached-result">
-              <img src="./img/icons8-link-64.png" alt=""
-                class="cached-result-icon" />
-              <span>www.site.com &#9207; </span>
+            <div class="sub-result">
+              <a href="#sub-result-link">
+                <h3 class="results-heading">Lorem, ipsum.</h3>
+              </a>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex.
+              </p>
             </div>
-            <h3 class="results-heading">
-              Lorem ipsum dolor sit amet.
-            </h3>
-          </a>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste vero
-          repellendus voluptatibus deserunt nulla minus iure sapiente est ipsa
-          dignissimos.
-        </p>
-      </div>
-
-      <!-- Secondary Result -->
-      <div class="result">
-        <div class="result-header">
-          <a href="#result-link" class="result-link">
-            <div class="cached-result">
-              <img src="./img/icons8-link-64.png" alt=""
-                class="cached-result-icon" />
-              <span>www.site.com &#9207; </span>
+            <div class="sub-result">
+              <a href="#sub-result-link">
+                <h3 class="results-heading">Lorem, ipsum.</h3>
+              </a>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aliquam, voluptates.
+              </p>
             </div>
-            <h3 class="results-heading">
-              Lorem ipsum dolor sit amet.
-            </h3>
-          </a>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quo
-          laboriosam corporis nobis alias quisquam debitis. Ad autem
-          accusantium molestias quod dolores asperiores iste earum, quos
-          impedit odio tenetur, reprehenderit dolor alias.
-        </p>
-      </div>
-
-      <!-- Secondary Result -->
-      <div class="result">
-        <div class="result-header">
-          <a href="#result-link" class="result-link">
-            <div class="cached-result">
-              <img src="./img/icons8-link-64.png" alt=""
-                class="cached-result-icon" />
-              <span>www.site.com &#9207; </span>
+            <div class="sub-result">
+              <a href="#sub-result-link">
+                <h3 class="results-heading">Lorem, ipsum.</h3>
+              </a>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel,
+                odio.
+              </p>
             </div>
-            <h3 class="results-heading">
-              Lorem ipsum dolor sit amet.
-            </h3>
-          </a>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-          eligendi voluptate rem quidem ea optio soluta tempora quod
-          recusandae accusamus!
-        </p>
-      </div>
-
-      <!-- Secondary Result -->
-      <div class="result">
-        <div class="result-header">
-          <a href="#result-link" class="result-link">
-            <div class="cached-result">
-              <img src="./img/icons8-link-64.png" alt=""
-                class="cached-result-icon" />
-              <span>www.site.com &#9207; </span>
+            <div class="sub-result">
+              <a href="#sub-result-link">
+                <h3 class="results-heading">Lorem, ipsum.</h3>
+              </a>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea
+                architecto doloribus quo cumque saepe.
+              </p>
             </div>
-            <h3 class="results-heading">
-              Lorem ipsum dolor sit amet.
-            </h3>
-          </a>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-          eligendi voluptate rem quidem ea optio soluta tempora quod
-          recusandae accusamus!
-        </p>
-      </div>
-
-      <!-- Related Searches -->
-      <div class="related-searches">
-        <h3 class="results-heading">Searches related to Lorem, ipsum.</h3>
-        <ul class="related-links">
-          <li>
-            <a href="#related-search-link">Lorem ipsum dolor sit <span
-                class="bold">amet.</span></a>
-          </li>
-          <li>
-            <a href="#related-search-link">Ab eveniet enim modi <span
-                class="bold">omnis?</span></a>
-          </li>
-          <li>
-            <a href="#related-search-link">Sed consectetur alias odit
-              <span class="bold">provident.</span></a>
-          </li>
-          <li>
-            <a href="#related-search-link">Provident modi voluptas alias <span
-                class="bold">ab!</span></a>
-          </li>
-          <li>
-            <a href="#related-search-link">Expedita magnam reiciendis velit
-              <span class="bold">inventore!</span></a>
-          </li>
-          <li>
-            <a href="#related-search-link">Error dolor quibusdam delectus
-              <span class="bold">tenetur?</span></a>
-          </li>
-          <li>
-            <a href="#related-search-link">Et nulla molestiae fuga <span
-                class="bold">ipsa.</span></a>
-          </li>
-          <li>
-            <a href="#related-search-link">Veniam quam libero quaerat <span
-                class="bold">optio.</span></a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Search Results Pagination -->
-      <div class="results-pagination">
-        <ul class="pagination-links">
-          <li><img src="img/googlelogo_G.png" /></li>
-          <li>
-            <a class="active" href="#1">
-              <img src="img/googlelogo_redO.png" />
-              <p>1</p>
-            </a>
-
-          </li>
-          <li>
-            <a href="#2"><img src="img/googlelogo_yellowO.png" />
-              <p>2</p>
-            </a>
-          </li>
-          <li>
-            <a href="#3"><img src="img/googlelogo_yellowO.png" />
-              <p>3</p>
-            </a>
-          </li>
-          <li>
-            <a href="#4"><img src="img/googlelogo_yellowO.png" />
-              <p>4</p>
-            </a>
-          </li>
-          <li>
-            <a href="#5"><img src="img/googlelogo_yellowO.png" />
-              <p>5</p>
-            </a>
-          </li>
-          <li>
-            <a href="#6"><img src="img/googlelogo_yellowO.png" />
-              <p>6</p>
-            </a>
-          </li>
-          <li>
-            <a href="#7"><img src="img/googlelogo_yellowO.png" />
-              <p>7</p>
-            </a>
-          </li>
-          <li>
-            <a href="#8"><img src="img/googlelogo_yellowO.png" />
-              <p>8</p>
-            </a>
-          </li>
-          <li>
-            <a href="#9"><img src="img/googlelogo_yellowO.png" />
-              <p>9</p>
-            </a>
-          </li>
-          <li>
-            <a href="#next"><img src="img/googlelogo_gle+.png" />
-              <p>Next</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Knowledge Side Panel -->
-    <section class="knowledge">
-      <div class="knowledge-card">
-        <div class="knowledge-card-head">
-          <div class="knowledge-card-head-title">
-            <span>The Odin Project</span>
-            <span>Company</span>
-          </div>
-          <div class="knowledge-card-head-share">
-            <a href="#share"><i class="fas fa-share-alt"></i></a>
-          </div>
-          <div class="knowledge-card-head-icon">
-            <a href="#image-search"><img src="./img/the_odin_project_logo.jpg"
-                alt=""></a>
+            <div class="more">
+              <a href="#more-results"
+                >More results from Lorem, ipsum dolor. &#187;</a
+              >
+            </div>
           </div>
         </div>
-        <div class="knowledge-card-url">
-          <a href="#site-link"><i
-              class="fas fa-globe"></i>theodinproject.com</a href="#">
-        </div>
-        <div class="knowledge-card-info">
-          <p><a href="#founded">Founded</a>: 2013</p>
-          <p>
-            <a class="#and-parent-org-search">Parent organization</a>: <a
-              href="#parent-org-search">Thinkful, Inc.</a>
+
+        <!-- Secondary Result -->
+        <div class="result">
+          <div class="result-header">
+            <a href="#result-link" class="result-link">
+              <div class="cached-result">
+                <img
+                  src="./img/icons8-link-64.png"
+                  alt=""
+                  class="cached-result-icon"
+                />
+                <span>www.site.com &#9207; </span>
+              </div>
+              <h3 class="results-heading">
+                Lorem ipsum dolor sit amet.
+              </h3>
+            </a>
+          </div>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
+            ut mollitia nostrum quam illo cupiditate amet voluptatibus veniam
+            tenetur soluta sequi fugiat id illum delectus.
           </p>
         </div>
-        <div class="knowledge-card-profiles">
-          <span>Profiles</span>
-          <div class="profiles-icons">
-            <div>
-              <span class="fa-stack">
-                <i class="fas fa-square fa-stack-2x twitter-color"></i>
-                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-              <p><a href="#twitter">Twitter</a></p>
+
+        <!-- Secondary Result -->
+        <div class="result">
+          <div class="result-header">
+            <a href="#result-link" class="result-link">
+              <div class="cached-result">
+                <img
+                  src="./img/icons8-link-64.png"
+                  alt=""
+                  class="cached-result-icon"
+                />
+                <span>www.site.com &#9207; </span>
+              </div>
+              <h3 class="results-heading">
+                Lorem ipsum dolor sit amet.
+              </h3>
+            </a>
+          </div>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste vero
+            repellendus voluptatibus deserunt nulla minus iure sapiente est ipsa
+            dignissimos.
+          </p>
+        </div>
+
+        <!-- Secondary Result -->
+        <div class="result">
+          <div class="result-header">
+            <a href="#result-link" class="result-link">
+              <div class="cached-result">
+                <img
+                  src="./img/icons8-link-64.png"
+                  alt=""
+                  class="cached-result-icon"
+                />
+                <span>www.site.com &#9207; </span>
+              </div>
+              <h3 class="results-heading">
+                Lorem ipsum dolor sit amet.
+              </h3>
+            </a>
+          </div>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quo
+            laboriosam corporis nobis alias quisquam debitis. Ad autem
+            accusantium molestias quod dolores asperiores iste earum, quos
+            impedit odio tenetur, reprehenderit dolor alias.
+          </p>
+        </div>
+
+        <!-- Secondary Result -->
+        <div class="result">
+          <div class="result-header">
+            <a href="#result-link" class="result-link">
+              <div class="cached-result">
+                <img
+                  src="./img/icons8-link-64.png"
+                  alt=""
+                  class="cached-result-icon"
+                />
+                <span>www.site.com &#9207; </span>
+              </div>
+              <h3 class="results-heading">
+                Lorem ipsum dolor sit amet.
+              </h3>
+            </a>
+          </div>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+            eligendi voluptate rem quidem ea optio soluta tempora quod
+            recusandae accusamus!
+          </p>
+        </div>
+
+        <!-- Secondary Result -->
+        <div class="result">
+          <div class="result-header">
+            <a href="#result-link" class="result-link">
+              <div class="cached-result">
+                <img
+                  src="./img/icons8-link-64.png"
+                  alt=""
+                  class="cached-result-icon"
+                />
+                <span>www.site.com &#9207; </span>
+              </div>
+              <h3 class="results-heading">
+                Lorem ipsum dolor sit amet.
+              </h3>
+            </a>
+          </div>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+            eligendi voluptate rem quidem ea optio soluta tempora quod
+            recusandae accusamus!
+          </p>
+        </div>
+
+        <!-- Related Searches -->
+        <div class="related-searches">
+          <h3 class="results-heading">Searches related to Lorem, ipsum.</h3>
+          <ul class="related-links">
+            <li>
+              <a href="#related-search-link"
+                >Lorem ipsum dolor sit <span class="bold">amet.</span></a
+              >
+            </li>
+            <li>
+              <a href="#related-search-link"
+                >Ab eveniet enim modi <span class="bold">omnis?</span></a
+              >
+            </li>
+            <li>
+              <a href="#related-search-link"
+                >Sed consectetur alias odit
+                <span class="bold">provident.</span></a
+              >
+            </li>
+            <li>
+              <a href="#related-search-link"
+                >Provident modi voluptas alias <span class="bold">ab!</span></a
+              >
+            </li>
+            <li>
+              <a href="#related-search-link"
+                >Expedita magnam reiciendis velit
+                <span class="bold">inventore!</span></a
+              >
+            </li>
+            <li>
+              <a href="#related-search-link"
+                >Error dolor quibusdam delectus
+                <span class="bold">tenetur?</span></a
+              >
+            </li>
+            <li>
+              <a href="#related-search-link"
+                >Et nulla molestiae fuga <span class="bold">ipsa.</span></a
+              >
+            </li>
+            <li>
+              <a href="#related-search-link"
+                >Veniam quam libero quaerat <span class="bold">optio.</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Search Results Pagination -->
+        <div class="results-pagination">
+          <ul class="pagination-links">
+            <li><img src="img/googlelogo_G.png" /></li>
+            <li>
+              <a class="active" href="#1">
+                <img src="img/googlelogo_redO.png" />
+                <p>1</p>
+              </a>
+            </li>
+            <li>
+              <a href="#2"
+                ><img src="img/googlelogo_yellowO.png" />
+                <p>2</p>
+              </a>
+            </li>
+            <li>
+              <a href="#3"
+                ><img src="img/googlelogo_yellowO.png" />
+                <p>3</p>
+              </a>
+            </li>
+            <li>
+              <a href="#4"
+                ><img src="img/googlelogo_yellowO.png" />
+                <p>4</p>
+              </a>
+            </li>
+            <li>
+              <a href="#5"
+                ><img src="img/googlelogo_yellowO.png" />
+                <p>5</p>
+              </a>
+            </li>
+            <li>
+              <a href="#6"
+                ><img src="img/googlelogo_yellowO.png" />
+                <p>6</p>
+              </a>
+            </li>
+            <li>
+              <a href="#7"
+                ><img src="img/googlelogo_yellowO.png" />
+                <p>7</p>
+              </a>
+            </li>
+            <li>
+              <a href="#8"
+                ><img src="img/googlelogo_yellowO.png" />
+                <p>8</p>
+              </a>
+            </li>
+            <li>
+              <a href="#9"
+                ><img src="img/googlelogo_yellowO.png" />
+                <p>9</p>
+              </a>
+            </li>
+            <li>
+              <a href="#next"
+                ><img src="img/googlelogo_gle+.png" />
+                <p>Next</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Knowledge Side Panel -->
+      <section class="knowledge">
+        <div class="knowledge-card">
+          <div class="knowledge-card-head">
+            <div class="knowledge-card-head-title">
+              <span>The Odin Project</span>
+              <span>Company</span>
             </div>
-            <div>
-              <span class="fa-stack">
-                <i class="fas fa-square fa-stack-2x youtube-color"></i>
-                <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
-              </span>
-              <p><a href="#youtube">YouTube</a></p>
+            <div class="knowledge-card-head-share">
+              <a href="#share"><i class="fas fa-share-alt"></i></a>
             </div>
-            <div>
-              <span class="fa-stack">
-                <i class="fas fa-square fa-stack-2x linkedin-color"></i>
-                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-              </span>
-              <p><a href="#linkedin">LinkedIn</a></p>
+            <div class="knowledge-card-head-icon">
+              <a href="#image-search"
+                ><img src="./img/the_odin_project_logo.jpg" alt=""
+              /></a>
+            </div>
+          </div>
+          <div class="knowledge-card-url">
+            <a href="#site-link"
+              ><i class="fas fa-globe"></i>theodinproject.com</a
+            >
+          </div>
+          <div class="knowledge-card-info">
+            <p><a href="#founded">Founded</a>: 2013</p>
+            <p>
+              <a class="#and-parent-org-search">Parent organization</a>:
+              <a href="#parent-org-search">Thinkful, Inc.</a>
+            </p>
+          </div>
+          <div class="knowledge-card-profiles">
+            <span>Profiles</span>
+            <div class="profiles-icons">
+              <div>
+                <span class="fa-stack">
+                  <i class="fas fa-square fa-stack-2x twitter-color"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+                <p><a href="#twitter">Twitter</a></p>
+              </div>
+              <div>
+                <span class="fa-stack">
+                  <i class="fas fa-square fa-stack-2x youtube-color"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+                <p><a href="#youtube">YouTube</a></p>
+              </div>
+              <div>
+                <span class="fa-stack">
+                  <i class="fas fa-square fa-stack-2x linkedin-color"></i>
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+                <p><a href="#linkedin">LinkedIn</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="knowledge-card-related">
+            <div class="knowledge-card-related-head">
+              <p><a href="#related-org-search">People also search for</a></p>
+              <p><a href="#more-related">View 10+ more</a></p>
+            </div>
+            <div class="knowledge-card-related-searches">
+              <div class="related-search">
+                <img src="./img/freecodecamp_logo.png" alt="" />
+                <a href="#freecodecamp">freeCode...</a>
+              </div>
+              <div class="related-search">
+                <img src="./img/github_logo.png" alt="" />
+                <a href="#github">Github</a>
+              </div>
+              <div class="related-search">
+                <img src="./img/edx_logo.png" alt="" />
+                <a href="#edx">edX</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="knowledge-card-related">
-          <div class="knowledge-card-related-head">
-            <p><a href="#related-org-search">People also search for</a></p>
-            <p><a href="#more-related">View 10+ more</a></p>
+        <div class="knowledge-actions">
+          <div class="knowledge-actions-container">
+            <a href="#disclaimer">Disclaimer</a>
+            <a href="#feedback">Feedback</a>
           </div>
-          <div class="knowledge-card-related-searches">
-            <div class="related-search">
-              <img src="./img/freecodecamp_logo.png" alt="">
-              <a href="#freecodecamp">freeCode...</a>
-            </div>
-            <div class="related-search">
-              <img src="./img/github_logo.png" alt="">
-              <a href="#github">Github</a>
-            </div>
-            <div class="related-search">
-              <img src="./img/edx_logo.png" alt="">
-              <a href="#edx">edX</a>
-            </div>
-          </div>
+          <a href="#knowledge-claim" class="knowledge-claim-btn">
+            <i class="fas fa-check-circle"></i> Claim this knowledge panel
+          </a>
         </div>
-      </div>
-      <div class="knowledge-actions">
-        <div class="knowledge-actions-container">
-          <a href="#disclaimer">Disclaimer</a>
-          <a href="#feedback">Feedback</a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-location">
+          <span>Nigeria</span>
+          <span></span>
+          <span
+            ><i class="fas fa-circle fa-xs"></i>
+            <span class="bold">Anor Londo</span> - Based on your past activity -
+            <a href="#use-precise-location">Use Precise location</a> -
+            <a href="#learn-more">Learn more</a></span
+          >
         </div>
-        <a href="#knowledge-claim" class="knowledge-claim-btn">
-          <i class="fas fa-check-circle"></i> Claim this knowledge panel
-        </a>
-      </div>
-    </section>
+        <div class="divider"></div>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="#help">Help</a></li>
+            <li><a href="#send-feedback">Send Feedback</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#terms">Terms</a></li>
+            <li>
+              <a target="_blank" href="https://icons8.com/icons/set/link--v1"
+                >Link icon</a
+              >
+              icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-location">
-        <span>Nigeria</span>
-        <span></span>
-        <span><i class="fas fa-circle fa-xs"></i> <span class="bold">Anor
-            Londo</span> -
-          Based on your past activity - <a href="#use-precise-location">Use
-            Precise location</a> -
-          <a href="#learn-more">Learn more</a></span>
-      </div>
-      <div class="divider"></div>
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="#help">Help</a></li>
-          <li><a href="#send-feedback">Send Feedback</a></li>
-          <li><a href="#privacy">Privacy</a></li>
-          <li><a href="#terms">Terms</a></li>
-          <li><a target="_blank"
-              href="https://icons8.com/icons/set/link--v1">Link icon</a> icon
-            by <a target="_blank" href="https://icons8.com">Icons8</a></li>
-        </ul>
-      </nav>
-    </footer>
-  </div>
-
-  <script src="./js/main.js"></script>
-</body>
-
+    <!-- jQuery Script -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
