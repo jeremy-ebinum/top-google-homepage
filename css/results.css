@@ -79,14 +79,13 @@ a:link {
 /* Collapsible Nav Styling */
 .header .collapse-nav {
   position: absolute;
-  top: 0;
+  top: 20px;
   width: 100%;
   display: grid;
   grid-template-areas: "logo search account";
   grid-template-columns: 150px 625px 1fr;
   grid-gap: 0 0.5rem;
   align-items: center;
-  margin-top: 1.25rem;
   grid-area: collapse-nav;
   background-color: #fff;
 }
@@ -98,7 +97,6 @@ a:link {
   width: 100%;
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--light-color);
-  margin-top: 0;
   box-shadow: 0px 3px 1px 0 var(--search-glow-color-2);
   z-index: 9999;
 }

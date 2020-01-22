@@ -34,7 +34,7 @@ window.addEventListener("scroll", function() {
         ],
         {
           // timing options
-          duration: 200,
+          duration: 50,
           iterations: 1,
           fill: "auto"
         }
@@ -43,6 +43,6 @@ window.addEventListener("scroll", function() {
     }
     setTimeout(() => {
       collapseNav.classList.remove("collapsed");
-    }, 200);
+    }, 50);
   }
 });
