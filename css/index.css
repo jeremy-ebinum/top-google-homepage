@@ -13,9 +13,14 @@
   margin: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
+  overflow: auto;
 }
 
 ul {
@@ -39,16 +44,12 @@ img {
 
 /* Utility Classes */
 .page-wrapper {
+  min-height: 100vh;
+  min-width: 1100px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.container {
-  max-width: 1600px;
-  padding: 0 1.5rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .btn {
@@ -73,12 +74,12 @@ img {
 .navbar ul,
 .footer ul {
   display: flex;
-  padding: 1.5rem 0;
+  padding: 1rem 1.5rem;
 }
 
 .navbar ul li,
 .footer ul li {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 .navbar ul:last-child li:last-child,
@@ -87,6 +88,10 @@ img {
 }
 
 /* Navbar Specific Styles */
+.navbar {
+  margin-bottom: 175px;
+}
+
 .navbar ul li a {
   font-size: 13px;
 }
@@ -102,6 +107,7 @@ img {
 
 /* Footer Specific Styles */
 .footer {
+  margin-top: auto;
   background-color: var(--light-color);
 }
 
@@ -116,28 +122,31 @@ img {
 
 /* Google Search */
 .google-search {
+  position: relative;
+  top: -75px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -15%;
+  width: max-content;
+  align-self: center;
 }
 
 /* Google Search Input */
 .google-search .google-search-input {
   position: relative;
   margin: 1.75rem 0;
-  width: 45%;
+  width: 540px;
 }
 
 .google-search .google-search-input input {
   background-color: #fff;
-  width: 100%;
   border: 1px solid var(--pill-element-outline-color);
   border-radius: 75px;
   padding: 0.75rem 2.75rem;
   font-size: 16px;
   outline: none;
+  width: 100%;
 }
 
 .google-search .google-search-input input:hover {
@@ -174,8 +183,8 @@ img {
 .google-search .google-search-submit a > button {
   border: none;
   padding: 0.55rem 1.25rem;
-  margin: 0 0.25rem;
-  background-color: rgb(235, 235, 235);
+  margin: 0 0.5rem;
+  background-color: hsl(0, 0%, 92%);
   box-shadow: 0 0 1px 0 hsl(0, 0%, 67%) inset;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -185,5 +194,10 @@ img {
 
 .google-search .google-search-submit a > button:hover {
   border: 1px solid hsl(0, 0%, 67%);
+  background: linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 95%));
   opacity: 1;
+}
+
+.google-search .google-search-submit a > button:active {
+  border: 1px solid hsl(245, 86%, 36%);
 }
