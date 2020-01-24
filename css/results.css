@@ -326,7 +326,6 @@ span#filters-options a:hover > span {
 
 .result .result-header .cached-result {
   position: relative;
-  z-index: 9999;
 }
 
 .result .result-header .cached-result img {
